@@ -1,6 +1,6 @@
 import asyncio
 from asyncio import transports
-from typing import Optional
+from typing import Optional  # hz
 
 
 userlist = []   # temporary list connected users
