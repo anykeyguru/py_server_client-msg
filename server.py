@@ -38,13 +38,15 @@ class ClientProtocol(asyncio.Protocol):
                     self.transport.write(
                         f"Hello, {self.login}!".encode()
                     )
-                    for stroke in what_is_new:
-                        self.transport.write(stroke)
+                    self.send_history()
+                    #for stroke in what_is_new:
+                    #    self.transport.write(stroke)
                 else:
                     print("User already exist! Please try again")
                     self.transport.write(
                         f"Hello,the user with login '{prelogin}' already exists!\nPlease try another name".encode()
                     )
+                    # Don't andestend HOW DISCONNECT CLIENT FROM SERVER SIDE?
 
         else:
 
